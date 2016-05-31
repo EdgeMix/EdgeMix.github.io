@@ -15,7 +15,7 @@
 
 
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <title>Edge Mixing</title>
+    <title>Edge Mix</title>
 
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
@@ -78,7 +78,23 @@
 
 
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-
+    <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById("c-11-21").onclick = function fun() {
+            document.getElementById("c-12-19").style.visibility='visible';
+          }
+          document.getElementById("c-11-22").onclick = function fun() {
+            document.getElementById("c-12-19").style.visibility='hidden';
+          }
+      
+          document.getElementById("c-13-17").onclick = function fun() {
+            document.getElementById("c-14-15").style.visibility='visible';
+          }
+          document.getElementById("c-13-18").onclick = function fun() {
+            document.getElementById("c-14-15").style.visibility='hidden';
+          }
+      }
+    </script>
 
 
 

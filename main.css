@@ -501,6 +501,9 @@ img.fluid {
 	font-size: 17px !important;
 	margin-bottom-bottom: 20px;
 }
+.cognito #c-12-19, .cognito #c-14-15 {
+	visibility: hidden;
+}
 /* About */
 
 .hover-block {
