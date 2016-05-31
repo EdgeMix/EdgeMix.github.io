@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="TODO">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="TODO" />
+    <meta property="og:description" content="TODO" />
+    <meta property="og:url" content="TODO" />
+    <meta property="og:image" content="TODO" />
+
+
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <title>Edge Mix</title>
+
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+
+  </head>
+
+  <body>
+
+    <div id="header" class="container-fluid bg-dark">
+      <img class="logo" src="assets/logo.png">
+      <div id="navbar" class="container-fluid">
+        <div class="container shadow-2">
+              <ul class="navlinks test">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="comingsoon.html">Discography</a></li>
+                <li><a href="comingsoon.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+        </div>
+      </div>
+    </div>
+
+
+<div id="intro" class="container-fluid bg-paper">
+<div class="container">
+  <div class="row">
+
+  <div class="six columns">
+    <div id="description" class="content">
+      <p>Edge Mixing is <i>the</i> place to get your music mixed.<br><b><i>Why?</i></b> We have the ears, experience and gear to make magic happen! Plus, we're here to make the process a fun, exciting, and worry-free experience. Our focus is <i>your</i> artistic vision, making it a reality through a killer mix.</p>
+    </div>
+  </div>
+  <div class="six columns">
+    <div id="module" class="shadow-2">
+      <div class="bg-dark-2">
+      <h2 class="marker">Examples of our work:</h2>
+      <div>
+        <audio preload="none" id="before-lightrock" src="audio/1Nite Before.wav"></audio>
+        <audio preload="none" id="after-lightrock" src="audio/1Nite After.wav"></audio>
+
+        <audio preload="none" id="before-pop" src="audio/AfterRain Before.wav"></audio>
+        <audio preload="none" id="after-pop" src="audio/AfterRain After.wav"></audio>
+
+        <audio preload="none" id="before-rap" src="audio/Break Down Before.wav"></audio>
+        <audio preload="none" id="after-rap" src="audio/Break Down After.wav"></audio>
+
+        <audio preload="none" id="before-randb" src="audio/Chances Before.wav"></audio>
+        <audio preload="none" id="after-randb" src="audio/Chances After.wav"></audio>
+
+        <audio preload="none" id="before-indierock" src="audio/It's Over But I Tried Before.wav"></audio>
+        <audio preload="none" id="after-indierock" src="audio/It's Over But I Tried After.wav"></audio>
+
+        <audio preload="none" id="before-poprock" src="audio/Maryanne Before.wav"></audio>
+        <audio preload="none" id="after-poprock" src="audio/Maryanne After.wav"></audio>
+
+        <audio preload="none" id="before-pop2" src="audio/So Lovely Before.wav"></audio>
+        <audio preload="none" id="after-pop2" src="audio/So Lovely After.wav"></audio>
+
+        <audio preload="none" id="before-progrock" src="audio/Square One Before.wav"></audio>
+        <audio preload="none" id="after-progrock" src="audio/Square One After.wav"></audio>
+
+        <audio preload="none" id="before-pop3" src="audio/The Dragon Before.wav"></audio>
+        <audio preload="none" id="after-pop3" src="audio/The Dragon After.wav"></audio>
+
+        <audio preload="none" id="before-rock2" src="audio/Wait Before.wav"></audio>
+        <audio preload="none" id="after-rock2" src="audio/Wait After.wav"></audio>
+
+        <audio preload="none" id="before-rock3" src="audio/Woman Before.wav"></audio>
+        <audio preload="none" id="after-rock3" src="audio/Woman After.wav"></audio>
+
+
+
+
+
+        <button class="left" onClick="toggle_before('before-lightrock','after-lightrock')">Light Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-lightrock','after-lightrock')">Light Rock <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-pop','after-pop')">Pop <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-pop','after-pop')">Pop <small>(After)</small></button>
+        
+        <button class="left" onClick="toggle_before('before-rap','after-rap')">Rap <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-rap','after-rap')">Rap <small>(After)</small></button>
+        
+        <button class="left" onClick="toggle_before('before-randb','after-randb')">R&amp;B <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-randb','after-randb')">R&amp;B <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-poprock','after-poprock')">Pop/Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-poprock','after-poprock')">Pop/Rock <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-pop2','after-pop2')">Pop <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-pop2','after-pop2')">Pop <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-progrock','after-progrock')">Prog Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-progrock','after-progrock')">Prog Rock <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-pop3','after-pop3')">Pop <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-pop3','after-pop3')">Pop <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-rock2','after-rock2')">Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-rock2','after-rock2')">Rock <small>(After)</small></button>
+
+        <button class="left" onClick="toggle_before('before-rock3','after-rock3')">Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle_after('before-rock3','after-rock3')">Rock <small>(After)</small></button>
+
+
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+<div id="testimonials" class="container-fluid">
+<div class="container">
+    <h2 class="marker">What clients are saying:</h2>
+
+
+  <div class="testimonials">
+    <div class="quote">
+      <p>"Anthony is incredibly talented, and the final mixes of my songs were immaculate. They sounded cleaner and larger than I imagined they could and, at this point, I couldn't imagine going elsewhere."</p>
+      <p class="author">&mdash; Matt Colligan, Artist/Musician</p>
+    </div>
+    <div class="quote">
+      <p>"Anthony gets the mix sounding better and faster then any other sound engineer I have ever worked with. He has good ears and works well with producers, as well as other musicians. I highly recommend Anthony for his mixing abilities."</p>
+      <p class="author">&mdash; Miles McNannes, Artist/Musician, Steel Guitars &amp; Telecasters</p>
+    </div>
+    <div class="quote">
+      <p>"Tony is, by far, one of the best mixers I've ever worked with. He goes above and beyond to make sure that you're satisfied with the finished product. Whenever I have a project, I always go to him before I even think of going anywhere else."</p>
+      <p class="author">&mdash; Jamel 'Jah' King, Artist/Singer</p>
+    </div>
+    <div class="quote">
+      <p>"I've worked with Tony on five different projects. My most important song ended up sounding totally different than I had imagined &mdash; and so much better &mdash; because Tony took what was there and mixed it in a way that I'd never thought about."</p>
+      <p class="author">&mdash; Robbie Salter, Artist/Musician</p>
+    </div>
+    <div class="quote">
+      <p>"Anthony is the best audio engineer I have ever worked with. Not only does he have an amazing ability to hear the most finite sounds and get you the best sound possible, but he is very quick and accurate at the same time."</p>
+      <p class="author">&mdash; Danny Falcon, Drummer/Vocalist &amp; Radio Host</p>
+    </div>
+    <div class="quote">
+      <p>"Tony is an incredible producer and mixer who thinks two steps ahead and truly cares about his work and his clients.<br>I would highly recommend Tony to anyone looking to take their sound to the next level."</p>
+      <p class="author">&mdash; Eddie Galan, Writer/Producer</p>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+
+<div id="details" class="container-fluid bg-paper">
+<h2 class="marker">What Edge Mixing Offers:</h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+<div class="row">
+
+  <div class="four columns fade">
+    <img class="icon" src="assets/cup 2.png">
+    <h2 class="subheading">Experience</h2>
+    <p>With over 10 years in the business, and clients from <i>American Idol</i>, <i>X-Factor</i>, and <i>iTunes Top 20s</i>, we've got the ears, experience and gear to make magic happen! We've also mixed tracks for Top 40 Radio, Fox Sports, and ESPN, and are knowledgeable on competitave and technical industry standards.</p>
+    <br>
+  </div>
+  <div class="four columns fade">
+    <img class="icon" src="assets/music 2.png">
+    <h2 class="subheading">Flexibility</h2>
+    <p>Did we mention we love working with up-and-coming artists and bands? New sounds and fresh music are what keeps us going. <i>Edge Mixing</i> understands the unique challenges you face in today's music industry, and we ensure your mix is competitive-sounding and meets your artistic goals.</p>
+    <br>
+  </div>
+  <div class="four columns fade">
+    <img class="icon" src="assets/money 2.png">
+    <h2 class="subheading">Pricing</h2>
+    <p>We also understand the budgetary constraints independent artists face these days, and accordingly, we not only offer competitive rates, but also a money-back guarantee. If you're not fully satisfied with your mix after 3 revisions, we'll give you a full refund. So there's absolutely no risk for you.</p>
+    <br>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<div id="contact" class="container-fluid">
+<div class="container">
+<div class="row">
+
+  <div class="twelve columns">
+    <br>
+    <p class="fadetwo">Contact us today to learn more, or to request a custom quote for your next mixing project.<br>We're happy to answer any questions you might have about the expectations of the mixing process.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a class="button" href="contact.html">Contact Us</a>
+    <br>
+
+  </div>
+
+</div>
+</div>
+</div>
+<div id="closer" class="container-fluid bg-paper">
+<div class="space"></div>
+<div class="container">
+<div class="row">
+
+  <div class="twelve columns">
+    <h2 class="subheading">Ready to take your mixing to the edge?<img class="scribble" src="assets/scribble.png"></h2>
+    <br>
+    <a class="button" href="quote.html">Get A Quote</a>
+
+  </div>
+
+</div>
+</div>
+<div class="space"></div>
+</div>
+
+    <div id="footer" class="container-fluid">
+    <div class="container">
+
+        <p>&copy; 2016 Edge Mixing</p>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="comingsoon.html">Discography</a></li>
+          <li><a href="comingsoon.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+
+    </div> 
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+
+    <script type="text/javascript">
+      function toggle_before(before_name, after_name) {
+
+        var before_song = document.getElementById(before_name);
+        var after_song = document.getElementById(after_name);
+
+        if (before_song.paused) {
+          before_song.currentTime = after_song.currentTime;
+          if (!after_song.paused) {
+            after_song.pause();
+          }
+          var sounds = document.getElementsByTagName('audio');
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
+          before_song.play();
+        }
+        else {
+          before_song.pause();
+        }
+      }
+      function toggle_after(before_name, after_name) {
+
+        var before_song = document.getElementById(before_name);
+        var after_song = document.getElementById(after_name);
+
+        if (after_song.paused) {
+            after_song.currentTime = before_song.currentTime;
+          if (!before_song.paused) {
+            before_song.pause();
+          }
+          var sounds = document.getElementsByTagName('audio');
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
+          after_song.play();
+        }
+        else {
+          after_song.pause();
+        }
+      }
+    </script>
+
+
+    <!--<script type="text/javascript">
+
+      var before_pop = document.getElementById("before-pop"); 
+      var after_pop = document.getElementById("after-pop");
+      var songs = [before_pop, after_pop];
+
+      function toggle_pop_before() {
+        if (before_pop.paused) {
+          if (!after_pop.paused) {
+            before_pop.currentTime = after_pop.currentTime;
+            after_pop.pause();
+          }
+
+          before_pop.play();
+        }
+        else {
+          before_pop.pause();
+        }
+      }
+      function toggle_pop_after() {
+        if (after_pop.paused) {
+          if (!before_pop.paused) {
+            after_pop.currentTime = before_pop.currentTime;
+            before_pop.pause();
+          }
+          after_pop.play();
+        }
+        else {
+          after_pop.pause();
+        }
+      }
+    </script>-->
+
+
+
+
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+      var offset = 0;
+      $(window).scroll( function(){
+          $('.fade').each( function(i) {
+              var top_of_object = $(this).offset().top;
+              var bottom_of_window = $(window).scrollTop() + $(window).height();
+              if( bottom_of_window > top_of_object + 100 ){
+              offset = offset + 500;
+                  
+                  $(this).animate({'opacity':'1'}, 500+offset);
+                          
+                  }
+              }); 
+          });
+      });
+    </script>
+
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+      var offset = 0;
+      $(window).scroll( function(){
+          $('.fadetwo').each( function(i) {
+              var top_of_object = $(this).offset().top;
+              var bottom_of_window = $(window).scrollTop() + $(window).height();
+              if( bottom_of_window > top_of_object + 100 ){
+                  
+                  $(this).animate({'opacity':'1'}, 1000);
+                          
+                  }
+              }); 
+          });
+      });
+    </script>
+
+
+    <script type="text/javascript">
+$(document).ready(function() {
+
+    $('.testimonials div').eq(Math.floor((Math.random() * $('.testimonials div').length))).show();
+
+    setInterval(function() {
+
+        var $items = $('.testimonials div');
+        if ($items.length < 2) {
+            return;
+        }
+
+        var $currentItem = $items.filter(':visible');
+        var currentIndex = $currentItem.index();
+        var nextIndex = currentIndex;
+        while (nextIndex == currentIndex) {
+            nextIndex = Math.floor((Math.random() * $items.length));
+        }
+        $currentItem.fadeOut(1000, function() {
+            $items.eq(nextIndex).fadeIn(1000);
+        });
+
+    }, 36000);
+
+});
+    </script>
+
+
+
+  </body>
+</html>
