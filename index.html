@@ -284,8 +284,7 @@
           if (!after_song.paused) {
             after_song.pause();
           }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
+
           before_song.play();
         }
         else {
@@ -302,8 +301,7 @@
           if (!before_song.paused) {
             before_song.pause();
           }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
+
           after_song.play();
         }
         else {
