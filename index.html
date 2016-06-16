@@ -280,10 +280,26 @@
     <!--<script src="jquery.min.js"></script>-->
     <script type="text/javascript">
     $( document ).ready(function() {
-      console.log( "ready!" );
+      console.log( "starting!" );
+
+      //lowLag.init({'audioTagTimeToLive':'10000'});
       lowLag.init();
+      lowLag.load("audio/1Nite Before.wav");
       lowLag.load("audio/1Nite After.wav");
-      lowLag.play("audio/1Nite After.wav");
+
+      lowLag.load("audio/AfterRain Before.wav");
+      lowLag.load("audio/AfterRain After.wav");
+
+      lowLag.load("audio/Break Down Before.wav");
+      lowLag.load("audio/Break Down After.wav");
+
+      lowLag.load("audio/Chances Before.wav");
+      lowLag.load("audio/Chances After.wav");
+
+      lowLag.load("audio/It's Over But I Tried Before.wav");
+      lowLag.load("audio/It's Over But I Tried After.wav");
+
+      console.log( "READY!" );
     });
     </script>
 
@@ -303,7 +319,8 @@
           var sounds = document.getElementsByTagName('audio');
           for(i=0; i<sounds.length; i++) sounds[i].pause();
 
-          before_song.play();
+          //before_song.play();
+          lowLag.play(before_song.id);
         }
         else {
           before_song.pause();
