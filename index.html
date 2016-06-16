@@ -56,23 +56,23 @@
       <div class="bg-dark-2">
       <h2 class="marker">Examples of our work:</h2>
       <div>
-        <audio preload="auto" id="before-lightrock" src="audio/1Nite Before.wav"></audio>
-        <audio preload="auto" id="after-lightrock" src="audio/1Nite After.wav"></audio>
+        <audio preload="none" id="before-lightrock" src="audio/1Nite Before.wav"></audio>
+        <audio preload="none" id="after-lightrock" src="audio/1Nite After.wav"></audio>
 
-        <audio preload="auto" id="before-pop" src="audio/AfterRain Before.wav"></audio>
-        <audio preload="auto" id="after-pop" src="audio/AfterRain After.wav"></audio>
+        <audio preload="none" id="before-pop" src="audio/AfterRain Before.wav"></audio>
+        <audio preload="none" id="after-pop" src="audio/AfterRain After.wav"></audio>
 
-        <audio preload="auto" id="before-rap" src="audio/Break Down Before.wav"></audio>
-        <audio preload="auto" id="after-rap" src="audio/Break Down After.wav"></audio>
+        <audio preload="none" id="before-rap" src="audio/Break Down Before.wav"></audio>
+        <audio preload="none" id="after-rap" src="audio/Break Down After.wav"></audio>
 
-        <audio preload="auto" id="before-randb" src="audio/Chances Before.wav"></audio>
-        <audio preload="auto" id="after-randb" src="audio/Chances After.wav"></audio>
+        <audio preload="none" id="before-randb" src="audio/Chances Before.wav"></audio>
+        <audio preload="none" id="after-randb" src="audio/Chances After.wav"></audio>
 
-        <audio preload="auto" id="before-indierock" src="audio/It's Over But I Tried Before.wav"></audio>
-        <audio preload="auto" id="after-indierock" src="audio/It's Over But I Tried After.wav"></audio>
+        <audio preload="none" id="before-indierock" src="audio/It's Over But I Tried Before.wav"></audio>
+        <audio preload="none" id="after-indierock" src="audio/It's Over But I Tried After.wav"></audio>
 
-        <audio preload="auto" id="before-poprock" src="audio/Maryanne Before.wav"></audio>
-        <audio preload="auto" id="after-poprock" src="audio/Maryanne After.wav"></audio>
+        <audio preload="none" id="before-poprock" src="audio/Maryanne Before.wav"></audio>
+        <audio preload="none" id="after-poprock" src="audio/Maryanne After.wav"></audio>
 
         <!--<audio preload="auto" id="before-pop2" src="audio/So Lovely Before.wav"></audio>
         <audio preload="auto" id="after-pop2" src="audio/So Lovely After.wav"></audio>
@@ -288,7 +288,7 @@
             after_song.pause();
           }
           var sounds = document.getElementsByTagName('audio');
-          //for(i=0; i<sounds.length; i++) sounds[i].pause();
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
 
           before_song.play();
         }
@@ -307,7 +307,7 @@
             before_song.pause();
           }
           var sounds = document.getElementsByTagName('audio');
-          //for(i=0; i<sounds.length; i++) sounds[i].pause();
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
             
           after_song.play();
         }
