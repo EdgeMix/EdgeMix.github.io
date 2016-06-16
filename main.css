@@ -480,12 +480,14 @@ img.fluid {
 		line-height: 25px;
 		margin-bottom: 20px;
 	}
+	#contactform .button {
+		margin: 0 auto 30px 0;
+	}
 
 .holder {
 	margin: 0 auto;
 	max-width: 800px;
 }
-
 
 .cognito .c-label label {
 	font-size: 17px;
@@ -503,6 +505,9 @@ img.fluid {
 }
 .cognito #c-12-19, .cognito #c-14-15 {
 	visibility: hidden;
+}
+div[data-field="SpecifyWhichTracksToEdit"], div[data-field="SpecifyWhichTracksToEdit2"]  {
+	outline: none !important;
 }
 /* About */
 
