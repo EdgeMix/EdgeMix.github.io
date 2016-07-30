@@ -340,6 +340,52 @@
 
 
 
+
+    <script type="text/javascript">
+      function toggle_before(before_name, after_name) {
+
+        var before_song = document.getElementById(before_name);
+        var after_song = document.getElementById(after_name);
+
+        if (before_song.paused) {
+          before_song.currentTime = after_song.currentTime;
+          if (!after_song.paused) {
+            after_song.pause();
+          }
+          var sounds = document.getElementsByTagName('audio');
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
+
+          //before_song.play();
+          lowLag.play(before_song.src);
+        }
+        else {
+          before_song.pause();
+        }
+      }
+      function toggle_after(before_name, after_name) {
+
+        var before_song = document.getElementById(before_name);
+        var after_song = document.getElementById(after_name);
+
+        if (after_song.paused) {
+            after_song.currentTime = before_song.currentTime;
+          if (!before_song.paused) {
+            before_song.pause();
+          }
+          var sounds = document.getElementsByTagName('audio');
+          for(i=0; i<sounds.length; i++) sounds[i].pause();
+            
+          //after_song.play();
+          lowLag.play(after_song.src);
+        }
+        else {
+          after_song.pause();
+        }
+      }
+    </script>
+
+
+
     <!--<script type="text/javascript">
       function toggle_before(before_name, after_name) {
 
