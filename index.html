@@ -420,12 +420,14 @@
       return  out;
     }
 
+    var defercount = 0;
     function toggle(song) {
+      defercount++;
       console.log(">>>>>>" + compliment(song) + "<<<<<<");
       zeroHashTable();
       h[song] = 1;
       showHashTable();
-      if (somethingPlaying()) {
+      if (somethingPlaying() && defercount > 1;) {
         Vardump.source.stop();
         console.log("STOPPED");
       }
