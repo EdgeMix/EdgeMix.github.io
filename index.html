@@ -409,12 +409,10 @@
     }
 
     function toggle(song) {
-      //CASE1: Both songs are stopped
       console.log(">>>>>>" + compliment(song) + "<<<<<<");
       zeroHashTable();
       h[song] = 1;
       showHashTable();
-      Vardump.source.stop();
       console.log("STOPPED");
       playFromHashTable(song);
     }
