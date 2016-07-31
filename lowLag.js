@@ -264,6 +264,9 @@ var lowLag = new function(){
 															console.log("playing via source.start ");
 
 			source.start();				// play the source now, using start
+															console.log("stopping via source.stop ");
+
+			source.stop();
 		}
 	}
 
