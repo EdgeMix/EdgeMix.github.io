@@ -423,6 +423,8 @@
 
     document.getElementById('stopButton').onclick = function() {
       console.log("STOPPED");
+      lowLag.audioContext.createBufferSource();
+      source.stop();
       soundManager.pauseAll();
       console.log("STOPPED");
 
