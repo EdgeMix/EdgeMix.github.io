@@ -394,6 +394,18 @@
         }
       }
 
+      function somethingPlaying() {
+        var retVal = false;
+        for (var k in h) {
+            if (h.hasOwnProperty(k)) {
+              if (h[k] === 1) {
+                  retVal = true;
+               }
+            }
+        }
+        return retVal;
+      }
+
 
     function compliment(s) {
       var out = s.slice(0, -4);
@@ -413,7 +425,10 @@
       zeroHashTable();
       h[song] = 1;
       showHashTable();
-      console.log("STOPPED");
+      if (somethingPlaying()) {
+        console.log(Vardump.source);
+        console.log("STOPPED");
+      }
       playFromHashTable(song);
     }
 
