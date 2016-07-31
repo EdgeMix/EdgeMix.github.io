@@ -102,19 +102,19 @@
         <button class="left" onClick="toggle('After Rain Before.mp3');">Pop <small>(Before)</small></button>
         <button class="right" onClick="toggle('After Rain After.mp3');">Pop <small>(After)</small></button>
         
-        <!--<button class="left" onClick="toggle_before('before-rap','after-rap')">Rap <small>(Before)</small></button>
-        <button class="right" onClick="toggle_after('before-rap','after-rap')">Rap <small>(After)</small></button>
+        <button class="left" onClick="toggle('Break Down Before.mp3')">Rap <small>(Before)</small></button>
+        <button class="right" onClick="toggle('Break Down After.mp3')">Rap <small>(After)</small></button>
         
-        <button class="left" onClick="toggle_before('before-randb','after-randb')">R&amp;B <small>(Before)</small></button>
-        <button class="right" onClick="toggle_after('before-randb','after-randb')">R&amp;B <small>(After)</small></button>
+        <button class="left" onClick="toggle('Chances Before.mp3)">R&amp;B <small>(Before)</small></button>
+        <button class="right" onClick="toggle('Chances After.mp3)">R&amp;B <small>(After)</small></button>
 
-        <button class="left" onClick="toggle_before('before-indierock','after-indierock')">Indie Rock <small>(Before)</small></button>
-        <button class="right" onClick="toggle_after('before-indierock','after-indierock')">Indie Rock <small>(After)</small></button>
+        <button class="left" onClick="toggle('It's Over But I Tried Before.mp3)">Indie Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle('It's Over But I Tried After.mp3)">Indie Rock <small>(After)</small></button>
 
-        <button class="left" onClick="toggle_before('before-poprock','after-poprock')">Pop/Rock <small>(Before)</small></button>
-        <button class="right" onClick="toggle_after('before-poprock','after-poprock')">Pop/Rock <small>(After)</small></button>
+        <button class="left" onClick="toggle('Maryanne After.mp3')">Pop/Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle('Maryanne After.mp3')">Pop/Rock <small>(After)</small></button>
 
-        <button class="left" onClick="toggle_before('before-pop2','after-pop2')">Pop <small>(Before)</small></button>
+        <!--<button class="left" onClick="toggle_before('before-pop2','after-pop2')">Pop <small>(Before)</small></button>
         <button class="right" onClick="toggle_after('before-pop2','after-pop2')">Pop <small>(After)</small></button>
 
         <button class="left" onClick="toggle_before('before-progrock','after-progrock')">Prog Rock <small>(Before)</small></button>
@@ -389,6 +389,9 @@
               if (h[k] === 1) {
                  lowLag.play(k);
                }
+               else {
+
+               }
             }
         }
       }
@@ -413,7 +416,6 @@
       zeroHashTable();
       h[song] = 1;
       showHashTable();
-
       playFromHashTable(song);
     }
     </script>
