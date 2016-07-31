@@ -426,7 +426,7 @@
       h[song] = 1;
       showHashTable();
       if (somethingPlaying()) {
-        console.log(Vardump.source);
+        Vardump.source.stop();
         console.log("STOPPED");
       }
       playFromHashTable(song);
