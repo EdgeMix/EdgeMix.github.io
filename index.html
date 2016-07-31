@@ -100,7 +100,7 @@
         <button class="right" onClick="toggle('1Nite After.mp3');">Light Rock <small>(After)</small></button>
 
         <button class="left" onClick="toggle('After Rain Before.mp3');">Pop <small>(Before)</small></button>
-        <button class="right" onClick="toggle('After Rain Before.mp3');">Pop <small>(After)</small></button>
+        <button class="right" onClick="toggle('After Rain After.mp3');">Pop <small>(After)</small></button>
         
         <!--<button class="left" onClick="toggle_before('before-rap','after-rap')">Rap <small>(Before)</small></button>
         <button class="right" onClick="toggle_after('before-rap','after-rap')">Rap <small>(After)</small></button>
@@ -357,8 +357,64 @@
     });
 
 
+
+      ////////////////////////////////////////////////////////////////
+
+      var h = new Object();
+      h['1Nite Before.mp3'] = 0;
+      h['1Nite After.mp3'] = 0;
+
+      // show the values stored
+      function showHashTable() {
+        for (var k in h) {
+            // use hasOwnProperty to filter out keys from the Object.prototype
+            if (h.hasOwnProperty(k)) {
+                console.log('key is: ' + k + ', value is: ' + h[k]);
+            }
+        }
+      }
+      function zeroHashTable() {
+        for (var k in h) {
+            // use hasOwnProperty to filter out keys from the Object.prototype
+            if (h.hasOwnProperty(k)) {
+              h[k] = 0;
+            }
+        }
+      }
+
+      function playFromHashTable() {
+        for (var k in h) {
+            // use hasOwnProperty to filter out keys from the Object.prototype
+            if (h.hasOwnProperty(k)) {
+              if (h[k] === 1) {
+                 lowLag.play(k);
+               }
+            }
+        }
+      }
+
+
+    function compliment(s) {
+      var out = s.slice(0, -4);
+      if (out[out.length-1] === 'e') {
+        out = out.slice(0, -6);
+        out = out + "After.mp3";
+      }
+      else {
+        out = out.slice(0, -5);
+        out = out + "Before.mp3";
+      }
+      return  out;
+    }
+
     function toggle(song) {
-      lowLag.play(song);
+      //CASE1: Both songs are stopped
+      console.log(">>>>>>" + compliment(song) + "<<<<<<");
+      zeroHashTable();
+      h[song] = 1;
+      showHashTable();
+
+      playFromHashTable(song);
     }
     </script>
 
