@@ -60,7 +60,7 @@
       <div class="bg-dark-2">
       <h2 class="marker">Examples of our work:</h2>
       <div>
-        <audio preload="none" id="before-lightrock" src="audio/1Nite Before.mp3"></audio>
+        <!--<audio preload="none" id="before-lightrock" src="audio/1Nite Before.mp3"></audio>
         <audio preload="none" id="after-lightrock" src="audio/1Nite After.mp3"></audio>
 
         <audio preload="none" id="before-pop" src="audio/After Rain Before.mp3"></audio>
@@ -76,7 +76,7 @@
         <audio preload="none" id="after-indierock" src="audio/It's Over But I Tried After.mp3"></audio>
 
         <audio preload="none" id="before-poprock" src="audio/Maryanne Before.mp3"></audio>
-        <audio preload="none" id="after-poprock" src="audio/Maryanne After.mp3"></audio>
+        <audio preload="none" id="after-poprock" src="audio/Maryanne After.mp3"></audio>-->
 
         <!--<audio preload="auto" id="before-pop2" src="audio/So Lovely Before.mp3"></audio>
         <audio preload="auto" id="after-pop2" src="audio/So Lovely After.mp3"></audio>
@@ -96,11 +96,11 @@
   
 
 
-        <button class="left" onClick="lowLag.play('audio/1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
-        <button class="right" onClick="lowLag.play('audio/1Nite After.mp3');">Light Rock <small>(After)</small></button>
+        <button class="left" onClick="toggle('1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
+        <button class="right" onClick="toggle('1Nite After.mp3');">Light Rock <small>(After)</small></button>
 
-        <button class="left" onClick="lowLag.play('audio/After Rain Before.mp3');">Pop <small>(Before)</small></button>
-        <button class="right" onClick="lowLag.play('audio/After Rain Before.mp3');">Pop <small>(After)</small></button>
+        <button class="left" onClick="toggle('After Rain Before.mp3');">Pop <small>(Before)</small></button>
+        <button class="right" onClick="toggle('After Rain Before.mp3');">Pop <small>(After)</small></button>
         
         <button class="left" onClick="toggle_before('before-rap','after-rap')">Rap <small>(Before)</small></button>
         <button class="right" onClick="toggle_after('before-rap','after-rap')">Rap <small>(After)</small></button>
@@ -318,69 +318,47 @@
 
 
       //lowLag.init({'audioTagTimeToLive':'10000'});
-      lowLag.init();
-      lowLag.load("audio/1Nite Before.mp3");
-      lowLag.load("audio/1Nite After.mp3");
+      lowLag.init({'urlPrefix':'audio/'});
 
-      lowLag.load("audio/After Rain Before.mp3");
-      lowLag.load("audio/After Rain After.mp3");
+      lowLag.load("1Nite Before.mp3");
+      lowLag.load("1Nite After.mp3");
 
-      lowLag.load("audio/Break Down Before.mp3");
-      lowLag.load("audio/Break Down After.mp3");
+      lowLag.load("After Rain Before.mp3");
+      lowLag.load("After Rain After.mp3");
 
-      lowLag.load("audio/Chances Before.mp3");
-      lowLag.load("audio/Chances After.mp3");
+      lowLag.load("Break Down Before.mp3");
+      lowLag.load("Break Down After.mp3");
 
-      lowLag.load("audio/It's Over But I Tried Before.mp3");
-      lowLag.load("audio/It's Over But I Tried After.mp3");
+      lowLag.load("Chances Before.mp3");
+      lowLag.load("Chances After.mp3");
+
+      lowLag.load("It's Over But I Tried Before.mp3");
+      lowLag.load("It's Over But I Tried After.mp3");
+
+      lowLag.load("Maryanne Before.mp3");
+      lowLag.load("Maryanne After.mp3");
+
+      lowLag.load("So Lovely Before.mp3");
+      lowLag.load("So Lovely After.mp3");
+
+      lowLag.load("Square One Before.mp3");
+      lowLag.load("Square One After.mp3");
+
+      lowLag.load("The Dragon Before.mp3");
+      lowLag.load("The Dragon After.mp3");
+
+      lowLag.load("Wait Before.mp3");
+      lowLag.load("Wait After.mp3");
+
+      lowLag.load("Woman Before.mp3");
+      lowLag.load("Woman After.mp3");
 
       console.log( "READY!" );
     });
-    </script>
 
 
-
-
-    <script type="text/javascript">
-      function toggle_before(before_name, after_name) {
-
-        var before_song = document.getElementById(before_name);
-        var after_song = document.getElementById(after_name);
-
-        if (before_song.paused) {
-          before_song.currentTime = after_song.currentTime;
-          if (!after_song.paused) {
-            after_song.pause();
-          }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
-
-          //before_song.play();
-          lowLag.play(before_song.src);
-        }
-        else {
-          before_song.pause();
-        }
-      }
-      function toggle_after(before_name, after_name) {
-
-        var before_song = document.getElementById(before_name);
-        var after_song = document.getElementById(after_name);
-
-        if (after_song.paused) {
-            after_song.currentTime = before_song.currentTime;
-          if (!before_song.paused) {
-            before_song.pause();
-          }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
-            
-          //after_song.play();
-          lowLag.play(after_song.src);
-        }
-        else {
-          after_song.pause();
-        }
+      function toggle(song) {
+        lowLag.play(song);
       }
     </script>
 
