@@ -96,7 +96,7 @@ var lowLag = new function(){
 		var format = "sm2";
 		if(force != undefined) format = force;
 		else {
-			if(typeof(webkitAudioContext) != "undefined") format = 'webkitAudio';
+			if(typeof(AudioContext) != "undefined") format = 'webkitAudio';
 			else if(navigator.userAgent.indexOf("Firefox")!=-1) format = 'audioTag';
 		}
 		switch(format){
@@ -105,8 +105,8 @@ var lowLag = new function(){
 				this.msg("init webkitAudio");
 				this.load= this.loadSoundWebkitAudio;
 				this.play = this.playSoundWebkitAudio;
-				this.webkitAudioContext = new webkitAudioContext();
-				if (this.useSuspension &= ('suspend' in lowLag.webkitAudioContext && 'onended' in lowLag.webkitAudioContext.createBufferSource())) {
+				this.AudioContext = new AudioContext();
+				if (this.useSuspension &= ('suspend' in lowLag.AudioContext && 'onended' in lowLag.AudioContext.createBufferSource())) {
 					this.playingQueue = [];
 					this.suspendPlaybackWebkitAudio();
 				}
@@ -201,7 +201,7 @@ var lowLag = new function(){
 	this.webkitPendingRequest = {};
 
 
-	this.webkitAudioContext = undefined;
+	this.AudioContext = undefined;
 	this.webkitAudioBuffers = {};
 
 	this.loadSoundWebkitAudio = function(urls,tag){
@@ -214,7 +214,7 @@ var lowLag = new function(){
 
 		// Decode asynchronously
 		request.onload = function() {
-			lowLag.webkitAudioContext.decodeAudioData(request.response, function(buffer) {
+			lowLag.AudioContext.decodeAudioData(request.response, function(buffer) {
 				lowLag.webkitAudioBuffers[tag] = buffer;
 				
 				if(lowLag.webkitPendingRequest[tag]){ //a request might have come in, try playing it now
@@ -236,7 +236,7 @@ var lowLag = new function(){
 			lowLag.webkitPendingRequest[tag] = true;
 			return;
 		}
-		var context = lowLag.webkitAudioContext;
+		var context = lowLag.AudioContext;
 		if (this.useSuspension && this.suspended) {
 			this.resumePlaybackWebkitAudio(); // Resume playback
 		}
@@ -269,7 +269,7 @@ var lowLag = new function(){
 	}
 
 	this.resumePlaybackWebkitAudio = function(){
-		this.webkitAudioContext.resume();
+		this.AudioContext.resume();
 		this.suspended = false;
 	}
 
@@ -278,7 +278,7 @@ var lowLag = new function(){
 			clearTimeout(this.suspendTimeout);
 		}
 		this.suspendTimeout = setTimeout(function(){
-			lowLag.webkitAudioContext.suspend();
+			lowLag.AudioContext.suspend();
 			lowLag.suspended = true;
 			lowLag.suspendTimeout = null;
 		}, this.suspendDelay);
