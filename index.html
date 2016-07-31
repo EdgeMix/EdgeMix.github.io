@@ -423,8 +423,7 @@
 
     document.getElementById('stopButton').onclick = function() {
       console.log("STOPPED");
-      var source = lowLag.AudioContext.createBufferSource();
-      source.stop();
+      console.log(Vardump.source);
       console.log("STOPPED");
 
       var sounds = document.getElementsByTagName('audio');

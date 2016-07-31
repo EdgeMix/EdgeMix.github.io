@@ -1,4 +1,7 @@
 if (!window.console) console = {log: function() {}};
+ 
+var Vardump = {}
+Vardump.source = "oh hello";
 
 var lowLag = new function(){
 	this.someVariable = undefined;
@@ -234,7 +237,7 @@ var lowLag = new function(){
 		var buffer = lowLag.webkitAudioBuffers[tag];
 		if(buffer == undefined) { //possibly not loaded; put in a request to play onload
 			lowLag.webkitPendingRequest[tag] = true;
-															console.log("Undefinited");
+															console.log("Undefined");
 			return;
 		}
 		var context = lowLag.webkitAudioContext;
@@ -262,11 +265,8 @@ var lowLag = new function(){
 				}
 			}
 															console.log("playing via source.start ");
-
+			Vardump.source = "MEWO <<<<<<<<<<<<<";
 			source.start();				// play the source now, using start
-															console.log("stopping via source.stop ");
-
-			source.stop();
 		}
 	}
 
