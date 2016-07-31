@@ -94,6 +94,7 @@
         <audio preload="auto" id="after-rock3" src="audio/Woman After.mp3"></audio>-->
 
   
+        <button id="stopButton">STOP</button>
 
 
         <button class="left" onClick="toggle('1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
@@ -127,7 +128,7 @@
         <button class="right" onClick="toggle('Wait After.mp3')">Rock <small>(After)</small></button>
 
         <button class="left" onClick="toggle('Woman Before.mp3')">Rock <small>(Before)</small></button>
-        <button class="right" onClick="toggle('Woman After.mp3')">Rock <small>(After)</small></button>->
+        <button class="right" onClick="toggle('Woman After.mp3')">Rock <small>(After)</small></button>
 
 
 
@@ -390,7 +391,7 @@
                  lowLag.play(k);
                }
                else {
-
+                  lo
                }
             }
         }
@@ -418,6 +419,13 @@
       showHashTable();
       playFromHashTable(song);
     }
+
+
+    document.getElementById('stopButton').onclick = function() {
+      console.log("STOPPED");
+      var sounds = document.getElementsByTagName('audio');
+      for(i=0; i<sounds.length; i++) sounds[i].pause();
+    };
     </script>
 
 
