@@ -96,7 +96,7 @@ var lowLag = new function(){
 		var format = "sm2";
 		if(force != undefined) format = force;
 		else {
-			if(typeof(AudioContext) != "undefined") format = 'webkitAudio';
+			if(typeof(webkitAudioContext) != "undefined") format = 'webkitAudio';
 			else if(navigator.userAgent.indexOf("Firefox")!=-1) format = 'audioTag';
 		}
 		switch(format){
@@ -105,8 +105,8 @@ var lowLag = new function(){
 				this.msg("init webkitAudio");
 				this.load= this.loadSoundWebkitAudio;
 				this.play = this.playSoundWebkitAudio;
-				this.AudioContext = new AudioContext();
-				if (this.useSuspension &= ('suspend' in lowLag.AudioContext && 'onended' in lowLag.AudioContext.createBufferSource())) {
+				this.webkitAudioContext = new webkitAudioContext();
+				if (this.useSuspension &= ('suspend' in lowLag.webkitAudioContext && 'onended' in lowLag.webkitAudioContext.createBufferSource())) {
 					this.playingQueue = [];
 					this.suspendPlaybackWebkitAudio();
 				}
@@ -201,7 +201,7 @@ var lowLag = new function(){
 	this.webkitPendingRequest = {};
 
 
-	this.AudioContext = undefined;
+	this.webkitAudioContext = undefined;
 	this.webkitAudioBuffers = {};
 
 	this.loadSoundWebkitAudio = function(urls,tag){
@@ -214,7 +214,7 @@ var lowLag = new function(){
 
 		// Decode asynchronously
 		request.onload = function() {
-			lowLag.AudioContext.decodeAudioData(request.response, function(buffer) {
+			lowLag.webkitAudioContext.decodeAudioData(request.response, function(buffer) {
 				lowLag.webkitAudioBuffers[tag] = buffer;
 				
 				if(lowLag.webkitPendingRequest[tag]){ //a request might have come in, try playing it now
@@ -234,24 +234,35 @@ var lowLag = new function(){
 		var buffer = lowLag.webkitAudioBuffers[tag];
 		if(buffer == undefined) { //possibly not loaded; put in a request to play onload
 			lowLag.webkitPendingRequest[tag] = true;
+															console.log("Undefinited");
 			return;
 		}
-		var context = lowLag.AudioContext;
+		var context = lowLag.webkitAudioContext;
 		if (this.useSuspension && this.suspended) {
 			this.resumePlaybackWebkitAudio(); // Resume playback
 		}
+															console.log("Made it to source");
+
 		var source = context.createBufferSource(); // creates a sound source
 		source.buffer = buffer;                    // tell the source which sound to play
 		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+															console.log("Connected source");
+
 		if (typeof(source.noteOn) == "function") {
+															console.log("playing via noteOn ");
+
 			source.noteOn(0);                          // play the source now, using noteOn
 		} else {
+															console.log("playing via noteOn ELSE ");
+
 			if (this.useSuspension) {
 				this.playingQueue.push(tag);
 				source.onended = function(e) {
 					lowLag.hndlOnEndedWebkitAudio(tag, e);
 				}
 			}
+															console.log("playing via source.start ");
+
 			source.start();				// play the source now, using start
 		}
 	}
@@ -269,7 +280,7 @@ var lowLag = new function(){
 	}
 
 	this.resumePlaybackWebkitAudio = function(){
-		this.AudioContext.resume();
+		this.webkitAudioContext.resume();
 		this.suspended = false;
 	}
 
@@ -278,7 +289,7 @@ var lowLag = new function(){
 			clearTimeout(this.suspendTimeout);
 		}
 		this.suspendTimeout = setTimeout(function(){
-			lowLag.AudioContext.suspend();
+			lowLag.webkitAudioContext.suspend();
 			lowLag.suspended = true;
 			lowLag.suspendTimeout = null;
 		}, this.suspendDelay);
