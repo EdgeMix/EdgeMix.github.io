@@ -94,7 +94,7 @@
         <audio preload="auto" id="after-rock3" src="audio/Woman After.mp3"></audio>-->
 
   
-        <button id="stopButton">STOP DA MUSIC</button>
+        <button id="stopButton">STOP The MUSIC</button>
 
 
         <button class="left" onClick="toggle('1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
@@ -390,9 +390,6 @@
               if (h[k] === 1) {
                  lowLag.play(k);
                }
-               else {
-
-               }
             }
         }
       }
@@ -417,6 +414,8 @@
       zeroHashTable();
       h[song] = 1;
       showHashTable();
+      Vardump.source.stop();
+      console.log("STOPPED");
       playFromHashTable(song);
     }
 
@@ -431,86 +430,6 @@
       for(i=0; i<sounds.length; i++) sounds[i].pause();
     };
     </script>
-
-
-
-    <!--<script type="text/javascript">
-      function toggle_before(before_name, after_name) {
-
-        var before_song = document.getElementById(before_name);
-        var after_song = document.getElementById(after_name);
-
-        if (before_song.paused) {
-          before_song.currentTime = after_song.currentTime;
-          if (!after_song.paused) {
-            after_song.pause();
-          }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
-
-          //before_song.play();
-          lowLag.play(before_song.src);
-        }
-        else {
-          before_song.pause();
-        }
-      }
-      function toggle_after(before_name, after_name) {
-
-        var before_song = document.getElementById(before_name);
-        var after_song = document.getElementById(after_name);
-
-        if (after_song.paused) {
-            after_song.currentTime = before_song.currentTime;
-          if (!before_song.paused) {
-            before_song.pause();
-          }
-          var sounds = document.getElementsByTagName('audio');
-          for(i=0; i<sounds.length; i++) sounds[i].pause();
-            
-          //after_song.play();
-          lowLag.play(after_song.src);
-        }
-        else {
-          after_song.pause();
-        }
-      }
-    </script>-->
-
-
-    <!--<script type="text/javascript">
-
-      var before_pop = document.getElementById("before-pop"); 
-      var after_pop = document.getElementById("after-pop");
-      var songs = [before_pop, after_pop];
-
-      function toggle_pop_before() {
-        if (before_pop.paused) {
-          if (!after_pop.paused) {
-            before_pop.currentTime = after_pop.currentTime;
-            after_pop.pause();
-          }
-
-          before_pop.play();
-        }
-        else {
-          before_pop.pause();
-        }
-      }
-      function toggle_pop_after() {
-        if (after_pop.paused) {
-          if (!before_pop.paused) {
-            after_pop.currentTime = before_pop.currentTime;
-            before_pop.pause();
-          }
-          after_pop.play();
-        }
-        else {
-          after_pop.pause();
-        }
-      }
-    </script>-->
-
 
 
 
