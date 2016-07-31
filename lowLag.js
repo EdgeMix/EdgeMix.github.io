@@ -265,7 +265,7 @@ var lowLag = new function(){
 				}
 			}
 															console.log("playing via source.start ");
-			Vardump.source = "MEWO <<<<<<<<<<<<<";
+			Vardump.source = source;
 			source.start();				// play the source now, using start
 		}
 	}

@@ -94,7 +94,7 @@
         <audio preload="auto" id="after-rock3" src="audio/Woman After.mp3"></audio>-->
 
   
-        <button id="stopButton">STOP</button>
+        <button id="stopButton">STOP DA MUSIC</button>
 
 
         <button class="left" onClick="toggle('1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
@@ -423,6 +423,7 @@
 
     document.getElementById('stopButton').onclick = function() {
       console.log("STOPPED");
+      Vardump.source.stop();
       console.log(Vardump.source);
       console.log("STOPPED");
 
