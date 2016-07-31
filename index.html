@@ -391,7 +391,7 @@
                  lowLag.play(k);
                }
                else {
-                  lo
+
                }
             }
         }
@@ -423,6 +423,9 @@
 
     document.getElementById('stopButton').onclick = function() {
       console.log("STOPPED");
+      soundManager.pauseAll();
+      console.log("STOPPED");
+
       var sounds = document.getElementsByTagName('audio');
       for(i=0; i<sounds.length; i++) sounds[i].pause();
     };
