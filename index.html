@@ -400,6 +400,7 @@
             if (h.hasOwnProperty(k)) {
               if (h[k] === 1) {
                   retVal = true;
+                  return retVal;
                }
             }
         }
@@ -421,17 +422,25 @@
     }
 
     var defercount = 0;
+    var current_song = "";
+    var compliment_song = "";
     function toggle(song) {
       defercount++;
-      console.log(">>>>>>" + compliment(song) + "<<<<<<");
+      current_song = song;
+      compliment_song = compliment(song);
+      console.log(">>>>>>" + compliment_song + "<<<<<<");
       zeroHashTable();
       h[song] = 1;
-      showHashTable();
       if (somethingPlaying() && defercount > 1) {
         Vardump.source.stop();
         console.log("STOPPED");
       }
-      playFromHashTable(song);
+      if (current_song === song) {
+        console.log("current:" + current_song + "," + song)
+      }
+      else {
+        playFromHashTable(song);
+      }
     }
 
 
