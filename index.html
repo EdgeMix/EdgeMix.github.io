@@ -435,11 +435,11 @@
         Vardump.source.stop();
         console.log("STOPPED");
       }
-      if (current_song === song) {
-        console.log("current:" + current_song + "," + song)
+      if (current_song === song && defercount > 1) {
       }
       else {
         playFromHashTable(song);
+
       }
     }
 
