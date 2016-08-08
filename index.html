@@ -441,7 +441,10 @@
         Vardump.source.stop();
         console.log("STOPPED");
       }
-      playFromHashTable(song);
+
+      if (last_song !== current_song) {
+        playFromHashTable(song);
+      }
       last_song = song;
     }
 
