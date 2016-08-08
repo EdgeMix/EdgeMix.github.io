@@ -422,6 +422,7 @@
     }
 
     var defercount = 0;
+    var last_song = "";
     var current_song = "";
     var compliment_song = "";
     function toggle(song) {
@@ -430,12 +431,18 @@
       compliment_song = compliment(song);
       console.log(">>>>>>" + compliment_song + "<<<<<<");
       zeroHashTable();
+
+      console.log("last: "+last_song);
+      console.log("current: "+current_song);
+      console.log("song: "+song);
       h[song] = 1;
+      
       if (somethingPlaying() && defercount > 1) {
         Vardump.source.stop();
         console.log("STOPPED");
       }
-        playFromHashTable(song);
+      playFromHashTable(song);
+      last_song = song;
     }
 
 
