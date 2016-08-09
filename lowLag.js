@@ -241,6 +241,8 @@ var lowLag = new function(){
 			return;
 		}
 		var context = lowLag.webkitAudioContext;
+		Vardump.context = context;
+
 		if (this.useSuspension && this.suspended) {
 			this.resumePlaybackWebkitAudio(); // Resume playback
 		}
@@ -267,8 +269,8 @@ var lowLag = new function(){
 															console.log("playing via source.start ");
 			Vardump.source = source;
 			source.start();				// play the source now, using start
-			console.log(Vardump.source.currentTime)
-			console.log(source.currentTime)
+			console.log(Vardump.context.currentTime)
+			console.log(context.currentTime)
 		}
 	}
 
