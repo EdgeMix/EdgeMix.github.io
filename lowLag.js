@@ -267,6 +267,8 @@ var lowLag = new function(){
 															console.log("playing via source.start ");
 			Vardump.source = source;
 			source.start();				// play the source now, using start
+			console.log(Vardump.source.currentTime)
+			console.log(source.currentTime)
 		}
 	}
 
