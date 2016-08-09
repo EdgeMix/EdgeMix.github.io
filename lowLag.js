@@ -242,6 +242,7 @@ var lowLag = new function(){
 		}
 		var context = lowLag.webkitAudioContext;
 		Vardump.context = context;
+		Vardump.audioLoadStart = new Date();
 
 		if (this.useSuspension && this.suspended) {
 			this.resumePlaybackWebkitAudio(); // Resume playback
@@ -269,8 +270,8 @@ var lowLag = new function(){
 															console.log("playing via source.start ");
 			Vardump.source = source;
 			source.start();				// play the source now, using start
-			console.log(Vardump.context.currentTime)
-			console.log(context.currentTime)
+			Vardump.audioLoadOffset = (new Date() - Vardump.audioLoadStart) / 1000;
+			Vardump.currentTime = Vardump.context.currentTime - Vardump.audioLoadOffset;
 		}
 	}
 
