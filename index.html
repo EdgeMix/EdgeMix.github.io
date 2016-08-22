@@ -95,7 +95,7 @@
 
   
         
-        <button onclick="console.log(Vardump.currentTime)">get TIME</button>
+        <button onclick="console.log(Vardump.currentTime)">get time</button>
 
 
         <button class="left" onClick="toggle('1Nite Before.mp3');">Light Rock <small>(Before)</small></button>
@@ -389,6 +389,8 @@
             // use hasOwnProperty to filter out keys from the Object.prototype
             if (h.hasOwnProperty(k)) {
               if (h[k] === 1) {
+                 Vardump.current_song_start = new Date();
+                 console.log("song started @" + current_song_start);
                  lowLag.play(k);
                }
             }
