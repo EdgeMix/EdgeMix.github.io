@@ -389,8 +389,8 @@
             // use hasOwnProperty to filter out keys from the Object.prototype
             if (h.hasOwnProperty(k)) {
               if (h[k] === 1) {
-                 Vardump.current_song_start = new Date();
-                 console.log("song started @" + current_song_start);
+                 Vardump.curSongStart = new Date();
+                 console.log("song started @" + Vardump.curSongStart);
                  lowLag.play(k);
                }
             }
