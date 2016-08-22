@@ -448,8 +448,8 @@
       if (last_song !== current_song) {
         // if songs are before/after, then pick up at same  spot
         if (last_song === compliment(current_song)) {
-          console.log("========== COMPLIMENT DETECTED =========");
-          console.log("time elapsed: " + (new Date - Vardump.curSongStart));
+          console.log("========== COMPLIMENT detected =========");
+          console.log("time elapsed: " + (new Date - Vardump.curSongStart)/1000 + "seconds");
         }
         playFromHashTable(song);
         last_song = song;
