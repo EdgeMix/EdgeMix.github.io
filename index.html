@@ -451,6 +451,7 @@
           console.log("========== COMPLIMENT DETECTED =========");
           console.log("time elapsed: " + (new Date - Vardump.curSongStart)/1000 + "seconds");
           Vardump.source.currentTime = ((new Date - Vardump.curSongStart)/1000);
+          console.log("currenttime" + Vardump.source.currentTime);
         }
         playFromHashTable(song);
         last_song = song;
