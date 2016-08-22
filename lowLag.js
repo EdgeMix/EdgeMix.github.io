@@ -237,7 +237,7 @@ var lowLag = new function(){
 		var buffer = lowLag.webkitAudioBuffers[tag];
 		if(buffer == undefined) { //possibly not loaded; put in a request to play onload
 			lowLag.webkitPendingRequest[tag] = true;
-															console.log("Undefined");
+														//	console.log("Undefined");
 			return;
 		}
 		var context = lowLag.webkitAudioContext;
@@ -247,19 +247,19 @@ var lowLag = new function(){
 		if (this.useSuspension && this.suspended) {
 			this.resumePlaybackWebkitAudio(); // Resume playback
 		}
-															console.log("Made it to source");
+															//console.log("Made it to source");
 
 		var source = context.createBufferSource(); // creates a sound source
 		source.buffer = buffer;                    // tell the source which sound to play
 		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-															console.log("Connected source");
+															//console.log("Connected source");
 
 		if (typeof(source.noteOn) == "function") {
-															console.log("playing via noteOn ");
+															//console.log("playing via noteOn ");
 
 			source.noteOn(0);                          // play the source now, using noteOn
 		} else {
-															console.log("playing via noteOn ELSE ");
+															//console.log("playing via noteOn ELSE ");
 
 			if (this.useSuspension) {
 				this.playingQueue.push(tag);
@@ -267,7 +267,7 @@ var lowLag = new function(){
 					lowLag.hndlOnEndedWebkitAudio(tag, e);
 				}
 			}
-															console.log("playing via source.start ");
+															//console.log("playing via source.start ");
 			Vardump.source = source;
 			source.start();				// play the source now, using start
 			Vardump.audioLoadOffset = (new Date() - Vardump.audioLoadStart) / 1000;
